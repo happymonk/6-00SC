@@ -18,12 +18,10 @@ def calc12MonthBalance(pmt):
             '\nNumber of months needed: ' + str(months) + '\nBalance: ' + str(round(bal,2)))
 
     for month in range(1,13):
+        bal = bal * (1+i) - payment
+        months = month
         if bal < 0:
-            report()
             break
-        else:
-            bal = bal * (1+i) - payment
-            months = month
             
     if bal > 0:
         calc12MonthBalance(payment + 10)
